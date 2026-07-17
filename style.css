@@ -1,0 +1,13 @@
+body{margin:0;background:#eef2f7;font-family:Poppins,sans-serif;padding:40px}
+.resume{max-width:980px;margin:auto;background:#fff;display:grid;grid-template-columns:32% 68%;box-shadow:0 15px 45px rgba(0,0,0,.15);border-radius:18px;overflow:hidden}
+.left{background:linear-gradient(180deg,#1e40af,#2563eb);color:#fff;padding:35px}
+.right{padding:40px}
+h1{margin:0;font-size:34px;line-height:1.2}
+.role{opacity:.9}
+h2{color:#1e40af;border-bottom:2px solid #e5e7eb;padding-bottom:6px}
+h3{margin-top:30px}
+ul{padding-left:18px}
+.job{display:flex;justify-content:space-between;flex-wrap:wrap;border-left:4px solid #2563eb;padding-left:15px;margin:18px 0}
+.job p{width:100%;margin:4px 0 0;color:#555}
+button{margin-top:25px;background:#2563eb;color:#fff;border:none;padding:12px 22px;border-radius:8px;cursor:pointer}
+@media(max-width:800px){.resume{grid-template-columns:1fr}.left,.right{padding:25px}}
