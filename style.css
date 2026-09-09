@@ -493,6 +493,12 @@ a:hover {
   border: 1px solid currentColor;
 }
 
+.badge-clawear {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.12);
+  border-color: #059669;
+}
+
 .badge-apple {
   color: var(--brand-apple);
   background: rgba(100, 116, 139, 0.1);
@@ -511,6 +517,28 @@ a:hover {
 .badge-oppo {
   color: var(--brand-oppo);
   background: rgba(5, 150, 105, 0.1);
+}
+
+.company-link {
+  color: inherit;
+  transition: var(--transition);
+}
+
+.company-link:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.marker-current {
+  background: #10b981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.35) !important;
+}
+
+.date-current {
+  color: #059669 !important;
+  font-weight: 700 !important;
+  border-color: rgba(5, 150, 105, 0.3) !important;
+  background: rgba(5, 150, 105, 0.08) !important;
 }
 
 .job-date {

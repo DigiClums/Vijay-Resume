@@ -62,6 +62,7 @@ function initContactCopy() {
 
   copyBtn.addEventListener('click', async () => {
     const contactText = `Vijay Kumar Kewlani
+Current Role: Sales Manager at Clawear (clawear.com)
 Phone: +91 6378191156
 Email: vijaykewlani231994@gmail.com
 Location: Niwaru, Jaipur, Rajasthan (302012)

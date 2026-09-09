@@ -1,6 +1,6 @@
 # Vijay Kumar Kewlani — Professional Digital Resume & Portfolio
 
-A modern, responsive, and ATS-compliant interactive resume web application highlighting **8+ years of Tech Sales Experience** (Apple, Samsung, Redmi, OPPO) and **AI Web Development** capabilities.
+A modern, responsive, and ATS-compliant interactive resume web application highlighting **Sales Manager role at Clawear (clawear.com)**, **8+ years of Retail & Tech Sales Experience** (Apple, Samsung, Redmi, OPPO), and **AI Web Development** capabilities.
 
 🔗 **Repository:** [https://github.com/DigiClums/Vijay-Resume](https://github.com/DigiClums/Vijay-Resume)  
 🌐 **Live Demo (GitHub Pages):** `https://digiclums.github.io/Vijay-Resume/`
@@ -9,7 +9,7 @@ A modern, responsive, and ATS-compliant interactive resume web application highl
 
 ## 🌟 Key Highlights & Features
 
-- **Executive Dual-Track Profile:** Highlights 8+ years of tier-1 smartphone retail sales combined with modern AI Prompt Engineering and Web Development skills.
+- **Executive Dual-Track Profile:** Highlights current leadership as **Sales Manager at Clawear (clawear.com)** along with 8+ years of tier-1 smartphone retail sales combined with modern AI Prompt Engineering and Web Development skills.
 - **ATS & Recruiter-Friendly Print Engine:** Includes a dedicated `@media print` stylesheet. Clicking **"Download PDF"** (or pressing `Cmd + P` / `Ctrl + P`) generates a clean, single/dual-page A4 document with crisp monochrome formatting, zero UI clutter, and readable contact details.
 - **Dark & Light Mode Support:** One-click toggle with system preference auto-detection and `localStorage` state persistence.
 - **Interactive Quick Actions:**
