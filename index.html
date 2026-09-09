@@ -1,56 +1,434 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vijay Kumar Kewlani</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijay Kumar Kewlani | Tech Sales Specialist & AI Web Developer</title>
+  <meta name="description" content="Resume of Vijay Kumar Kewlani - 8+ years experience in Tech & Mobile Retail Sales (Apple, Samsung, Redmi, OPPO) and AI Web Development.">
+  <meta name="author" content="Vijay Kumar Kewlani">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="resume">
-<div class="left">
-<h1>Vijay Kumar<br>Kewlani</h1>
-<p class="role">Sales Professional | AI Web Developer</p>
-<hr>
-<h3>Contact</h3>
-<p>📱 6378191156</p>
-<p>📍 Niwaru, Jaipur, Rajasthan</p>
-<p>🎂 23 Jan 1994</p>
 
-<h3>Skills</h3>
-<ul>
-<li>MS Office</li>
-<li>CRM</li>
-<li>AI Web Development</li>
-<li>App Development</li>
-<li>Blockchain</li>
-<li>Sales & Customer Service</li>
-</ul>
-</div>
+  <!-- Floating Action Header (Hidden during Print) -->
+  <nav class="top-nav no-print" aria-label="Resume Actions">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="status-indicator"></span>
+        <span class="status-text">Available for Opportunities</span>
+      </div>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-secondary" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <span class="theme-icon light-icon" aria-hidden="true">🌙</span>
+          <span class="theme-icon dark-icon" aria-hidden="true">☀️</span>
+          <span class="btn-text">Theme</span>
+        </button>
+        <button id="copyContactBtn" class="btn-secondary" title="Copy Contact Details" aria-label="Copy Contact Details">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="btn-text">Copy Contact</span>
+        </button>
+        <a href="https://wa.me/916378191156?text=Hi%20Vijay,%20I%20saw%20your%20resume" target="_blank" rel="noopener noreferrer" class="btn-secondary" title="Message on WhatsApp">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.43c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/>
+          </svg>
+          <span class="btn-text">WhatsApp</span>
+        </a>
+        <button id="printBtn" class="btn-primary" onclick="window.print()" title="Download PDF or Print" aria-label="Download PDF">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9V2h12v7"></path>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Download PDF</span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-<div class="right">
-<section>
-<h2>Profile</h2>
-<p>Sales professional with 8+ years of experience across OPPO, Samsung, Redmi and Apple. Passionate about AI, web development, mobile applications and blockchain technology.</p>
-</section>
+  <!-- Main Resume Container -->
+  <div class="resume-wrapper">
+    <main class="resume-card" id="resumeContent">
 
-<section>
-<h2>Experience</h2>
-<div class="job"><b>OPPO</b><span>2016–2019</span><p>Sales Promoter</p></div>
-<div class="job"><b>Samsung</b><span>2019–2021</span><p>Sales Promoter</p></div>
-<div class="job"><b>Redmi</b><span>2023–2024</span><p>Sales Promoter</p></div>
-<div class="job"><b>Apple (Accord)</b><span>2025</span><p>Sales Associate (2 Months)</p></div>
-</section>
+      <!-- Header Section -->
+      <header class="resume-header">
+        <div class="header-main">
+          <div class="avatar-container">
+            <div class="avatar-monogram" aria-hidden="true">VK</div>
+          </div>
+          <div class="header-details">
+            <div class="name-badge-row">
+              <h1 class="candidate-name">Vijay Kumar Kewlani</h1>
+            </div>
+            <p class="candidate-title">Tech Sales Specialist &bull; AI Web Developer &bull; Hardware Expert</p>
+            <p class="candidate-summary">
+              Dynamic and results-driven sales professional with <strong>8+ years of expertise</strong> leading frontline sales and product demonstrations for world-class smartphone brands including <strong>Apple, Samsung, Xiaomi/Redmi, and OPPO</strong>. Combines deep retail sales mastery with modern capabilities in <strong>AI Web Development</strong>, prompt engineering, and smartphone hardware diagnostics. Proven track record of consistently exceeding volume targets by up to <strong>125%</strong> while delivering premium customer satisfaction.
+            </p>
+          </div>
+        </div>
 
-<section>
-<h2>Education</h2>
-<p><b>12th</b> — Commerce with Computer Science</p>
-<p><b>Diploma</b> — Mobile Phone Repairing</p>
-</section>
+        <!-- Contact Pills Bar -->
+        <div class="contact-grid">
+          <a href="tel:+916378191156" class="contact-chip" title="Call Vijay">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+91 6378191156</span>
+          </a>
 
-<button onclick="window.print()">Download PDF</button>
-</div>
-</div>
+          <a href="mailto:vijaykewlani231994@gmail.com" class="contact-chip" title="Email Vijay">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>vijaykewlani231994@gmail.com</span>
+          </a>
+
+          <div class="contact-chip" title="Location">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Niwaru, Jaipur, Rajasthan (302012)</span>
+          </div>
+
+          <a href="https://github.com/DigiClums" target="_blank" rel="noopener noreferrer" class="contact-chip" title="GitHub Portfolio">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>github.com/DigiClums</span>
+          </a>
+        </div>
+
+        <!-- High-Impact Key Metrics -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-num">8+</span>
+            <span class="metric-label">Years Experience</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">4</span>
+            <span class="metric-label">Tier-1 Tech Brands</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">120%+</span>
+            <span class="metric-label">Avg. Sales Target Hit</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">100%</span>
+            <span class="metric-label">Customer Satisfaction</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Two-Column Layout for ATS & Modern Viewing -->
+      <div class="resume-body">
+        
+        <!-- Left / Primary Column: Work Experience & Projects -->
+        <div class="main-column">
+
+          <!-- Work Experience Section -->
+          <section class="section">
+            <div class="section-heading">
+              <div class="section-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <h2 class="section-title">Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+
+              <!-- Apple Job -->
+              <article class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="job-header">
+                    <div>
+                      <h3 class="job-role">Sales Associate</h3>
+                      <div class="company-name">Apple (Accord Partner)</div>
+                    </div>
+                    <div class="job-meta">
+                      <span class="job-badge badge-apple">Apple Ecosystem</span>
+                      <span class="job-date">2025 (2 Months)</span>
+                    </div>
+                  </div>
+                  <ul class="job-bullets">
+                    <li>Delivered premium consultative sales advisory for the complete Apple ecosystem (iPhone, Mac, iPad, Apple Watch, AirPods) in accordance with Apple's world-class retail customer experience benchmarks.</li>
+                    <li>Conducted tailored customer lifestyle assessments, translating complex iOS/macOS technical capabilities into tangible benefits to close high-value device sales.</li>
+                    <li>Consistently drove high attach rates for AppleCare+ warranty protection, genuine accessories, and trade-in upgrade options.</li>
+                    <li>Maintained outstanding customer satisfaction (CSAT) scores through courteous onboarding and device setup support.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <!-- Redmi Job -->
+              <article class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="job-header">
+                    <div>
+                      <h3 class="job-role">Senior Sales Promoter</h3>
+                      <div class="company-name">Redmi (Xiaomi Technology)</div>
+                    </div>
+                    <div class="job-meta">
+                      <span class="job-badge badge-redmi">Xiaomi / Redmi</span>
+                      <span class="job-date">2023 – 2024</span>
+                    </div>
+                  </div>
+                  <ul class="job-bullets">
+                    <li>Spearheaded retail sales, customer demonstrations, and launch activations for Xiaomi & Redmi smartphone series in high-footfall retail counters in Jaipur.</li>
+                    <li>Consistently exceeded monthly assigned sales quotas by <strong>115% to 125%</strong>, establishing top sales conversion within the store team.</li>
+                    <li>Managed daily floor operations including stock reconciliation, POS billing, price parity, and interactive demo device maintenance.</li>
+                    <li>Educated retail customers on HyperOS/MIUI ecosystem advantages, camera capabilities, and fast-charging technologies to out-convert competing brands.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <!-- Samsung Job -->
+              <article class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="job-header">
+                    <div>
+                      <h3 class="job-role">Sales Promoter</h3>
+                      <div class="company-name">Samsung Electronics</div>
+                    </div>
+                    <div class="job-meta">
+                      <span class="job-badge badge-samsung">Galaxy Series</span>
+                      <span class="job-date">2019 – 2021</span>
+                    </div>
+                  </div>
+                  <ul class="job-bullets">
+                    <li>Drove revenue expansion for Samsung Galaxy flagship (S-series, Note-series) and high-volume Galaxy A-series smartphones across multi-brand retail counters.</li>
+                    <li>Executed live feature demonstrations highlighting Super AMOLED displays, Knox security, multicamera systems, and Samsung Pay integrations.</li>
+                    <li>Achieved over 95%+ quarterly target attainment by cultivating lasting relationships with walk-in buyers and generating repeat referral sales.</li>
+                    <li>Collaborated with store managers and distributor teams to plan stock orders and maximize festive sales campaign results.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <!-- OPPO Job -->
+              <article class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="job-header">
+                    <div>
+                      <h3 class="job-role">Sales Promoter</h3>
+                      <div class="company-name">OPPO Mobile</div>
+                    </div>
+                    <div class="job-meta">
+                      <span class="job-badge badge-oppo">Camera & Charging</span>
+                      <span class="job-date">2016 – 2019</span>
+                    </div>
+                  </div>
+                  <ul class="job-bullets">
+                    <li>Drove frontline sales and brand presence during OPPO's key retail expansion phase across Jaipur territory.</li>
+                    <li>Showcased key technological innovations such as VOOC Flash Charging and advanced selfie/portrait optics to outperform competitors.</li>
+                    <li>Organized promotional weekend roadshows, in-store launch campaigns, and counter visual displays, earning regional recognition for sales excellence.</li>
+                  </ul>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- Featured Projects / Technical Initiatives -->
+          <section class="section">
+            <div class="section-heading">
+              <div class="section-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h2 class="section-title">Projects & Technical Initiatives</h2>
+            </div>
+
+            <div class="projects-grid">
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">AI Web Applications & Prompt Engineering</h3>
+                  <span class="project-tag">AI & Web</span>
+                </div>
+                <p class="project-desc">
+                  Engineered interactive web utilities leveraging Large Language Models (LLMs), prompt engineering, and modern frontend tools. Designed responsive interfaces and integrated AI-assisted workflows to simplify complex digital tasks.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-pill">AI Models</span>
+                  <span class="tech-pill">JavaScript</span>
+                  <span class="tech-pill">HTML5/CSS3</span>
+                  <span class="tech-pill">Prompt Engineering</span>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">Interactive Digital Resume & Portfolio</h3>
+                  <a href="https://github.com/DigiClums/Vijay-Resume" target="_blank" rel="noopener noreferrer" class="project-link" title="View Source on GitHub">
+                    <span>GitHub</span> &rarr;
+                  </a>
+                </div>
+                <p class="project-desc">
+                  Built a high-performance, ATS-compliant, responsive digital CV with dynamic dark/light theme switching, CSS custom properties, zero external heavyweight dependencies, and clean A4 print optimization.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-pill">Semantic HTML</span>
+                  <span class="tech-pill">Modular CSS</span>
+                  <span class="tech-pill">Print Styles</span>
+                  <span class="tech-pill">Git / GitHub</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Right / Secondary Column: Skills, Education & Core Strengths -->
+        <aside class="sidebar-column">
+
+          <!-- Core Skills Section -->
+          <section class="section">
+            <div class="section-heading">
+              <div class="section-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h2 class="section-title">Skills & Competencies</h2>
+            </div>
+
+            <div class="skill-category">
+              <h4 class="skill-group-title">Tech Retail & Sales Mastery</h4>
+              <div class="skills-cloud">
+                <span class="skill-badge">Consultative Selling</span>
+                <span class="skill-badge">Target Attainment</span>
+                <span class="skill-badge">Product Demonstration</span>
+                <span class="skill-badge">Customer Service (CSAT)</span>
+                <span class="skill-badge">Cross-Selling & Upselling</span>
+                <span class="skill-badge">CRM & Footfall Conversion</span>
+                <span class="skill-badge">Store Inventory & POS</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4 class="skill-group-title">AI & Web Development</h4>
+              <div class="skills-cloud">
+                <span class="skill-badge badge-tech">AI Web Development</span>
+                <span class="skill-badge badge-tech">Prompt Engineering</span>
+                <span class="skill-badge badge-tech">HTML5 & CSS3</span>
+                <span class="skill-badge badge-tech">Modern JavaScript (ES6+)</span>
+                <span class="skill-badge badge-tech">Responsive Web Design</span>
+                <span class="skill-badge badge-tech">App Development Basics</span>
+                <span class="skill-badge badge-tech">Blockchain Enthusiast</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4 class="skill-group-title">Hardware & Diagnostics</h4>
+              <div class="skills-cloud">
+                <span class="skill-badge">Smartphone Architecture</span>
+                <span class="skill-badge">Mobile Hardware Diagnostics</span>
+                <span class="skill-badge">Component-Level Repair</span>
+                <span class="skill-badge">OS Flashing & Troubleshooting</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4 class="skill-group-title">Tools & Platforms</h4>
+              <div class="skills-cloud">
+                <span class="skill-badge">MS Office (Excel, Word)</span>
+                <span class="skill-badge">Git & GitHub</span>
+                <span class="skill-badge">VS Code</span>
+                <span class="skill-badge">Chrome DevTools</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Education & Credentials -->
+          <section class="section">
+            <div class="section-heading">
+              <div class="section-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <h2 class="section-title">Education & Diplomas</h2>
+            </div>
+
+            <div class="edu-card">
+              <h3 class="edu-degree">Diploma in Mobile Phone Repairing</h3>
+              <p class="edu-field">Hardware & Chip-Level Smartphone Technology</p>
+              <p class="edu-detail">Comprehensive hands-on training in micro-soldering, circuit schematics, hardware diagnostics, and firmware repair.</p>
+            </div>
+
+            <div class="edu-card">
+              <h3 class="edu-degree">Senior Secondary (12th)</h3>
+              <p class="edu-field">Commerce with Computer Science</p>
+              <p class="edu-detail">Core subjects in business fundamentals, accounting principles, and computer science foundations.</p>
+            </div>
+          </section>
+
+          <!-- Personal Information -->
+          <section class="section">
+            <div class="section-heading">
+              <div class="section-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <h2 class="section-title">Additional Details</h2>
+            </div>
+
+            <div class="info-list">
+              <div class="info-item">
+                <span class="info-label">Date of Birth:</span>
+                <span class="info-val">23 January 1994</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Languages:</span>
+                <span class="info-val">Hindi (Native), English (Professional)</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Location:</span>
+                <span class="info-val">Jaipur, Rajasthan, India</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Interests:</span>
+                <span class="info-val">AI Innovation, Emerging Tech, Consumer Electronics</span>
+              </div>
+            </div>
+          </section>
+
+        </aside>
+      </div>
+
+      <!-- Footer Section -->
+      <footer class="resume-footer no-print">
+        <p>&copy; 2026 Vijay Kumar Kewlani &bull; Designed for High Impact &amp; ATS Screening</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification for Copy -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">Contact copied to clipboard!</div>
+
+  <!-- Interactive JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

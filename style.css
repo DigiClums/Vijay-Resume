@@ -1,13 +1,1047 @@
-body{margin:0;background:#eef2f7;font-family:Poppins,sans-serif;padding:40px}
-.resume{max-width:980px;margin:auto;background:#fff;display:grid;grid-template-columns:32% 68%;box-shadow:0 15px 45px rgba(0,0,0,.15);border-radius:18px;overflow:hidden}
-.left{background:linear-gradient(180deg,#1e40af,#2563eb);color:#fff;padding:35px}
-.right{padding:40px}
-h1{margin:0;font-size:34px;line-height:1.2}
-.role{opacity:.9}
-h2{color:#1e40af;border-bottom:2px solid #e5e7eb;padding-bottom:6px}
-h3{margin-top:30px}
-ul{padding-left:18px}
-.job{display:flex;justify-content:space-between;flex-wrap:wrap;border-left:4px solid #2563eb;padding-left:15px;margin:18px 0}
-.job p{width:100%;margin:4px 0 0;color:#555}
-button{margin-top:25px;background:#2563eb;color:#fff;border:none;padding:12px 22px;border-radius:8px;cursor:pointer}
-@media(max-width:800px){.resume{grid-template-columns:1fr}.left,.right{padding:25px}}
+/* ==========================================================================
+   Vijay Kumar Kewlani - Upgraded Modern Executive Resume Stylesheet
+   Features: Light/Dark Theme, Interactive Elements, Responsive Grid,
+             ATS-Compliant & Pixel-Perfect Print Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties (Design Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Light Theme (Default) */
+  --bg-body: #f1f5f9;
+  --bg-surface: #ffffff;
+  --bg-surface-subtle: #f8fafc;
+  --bg-card-hover: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-subtle: #cbd5e1;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+
+  --accent-primary: #1d4ed8;
+  --accent-primary-hover: #1e40af;
+  --accent-soft: #eff6ff;
+  --accent-border: #bfdbfe;
+
+  --brand-apple: #334155;
+  --brand-redmi: #ea580c;
+  --brand-samsung: #0284c7;
+  --brand-oppo: #059669;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 12px 30px -4px rgba(15, 23, 42, 0.12);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-body: #0b0f19;
+  --bg-surface: #111827;
+  --bg-surface-subtle: #1e293b;
+  --bg-card-hover: #1f293d;
+  --border-color: #1e293b;
+  --border-subtle: #334155;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.12);
+  --accent-border: rgba(59, 130, 246, 0.28);
+
+  --brand-apple: #94a3b8;
+  --brand-redmi: #fb923c;
+  --brand-samsung: #38bdf8;
+  --brand-oppo: #34d399;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 35px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Global Typography
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-body);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-bottom: 50px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Top Action Navigation Bar (Hidden during Print)
+   -------------------------------------------------------------------------- */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+
+.nav-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.status-indicator {
+  width: 9px;
+  height: 9px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.8; }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-primary-hover);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-subtle);
+  transform: translateY(-1px);
+}
+
+/* Theme Icon Toggle */
+.dark-icon { display: none; }
+[data-theme="dark"] .light-icon { display: none; }
+[data-theme="dark"] .dark-icon { display: inline; }
+
+/* --------------------------------------------------------------------------
+   Resume Wrapper & Main Card
+   -------------------------------------------------------------------------- */
+.resume-wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.resume-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  padding: 44px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Resume Header
+   -------------------------------------------------------------------------- */
+.resume-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 28px;
+  margin-bottom: 32px;
+}
+
+.header-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.avatar-container {
+  flex-shrink: 0;
+}
+
+.avatar-monogram {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.header-details {
+  flex: 1;
+}
+
+.candidate-name {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.candidate-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+.candidate-summary {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 840px;
+}
+
+.candidate-summary strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Contact Chips Grid */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.contact-chip:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-border);
+  color: var(--accent-primary);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.chip-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+/* Key Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.metric-card {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.metric-card:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}
+
+.metric-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  line-height: 1.1;
+  margin-bottom: 3px;
+}
+
+.metric-label {
+  font-size: 0.775rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Resume Body Grid (Main vs Sidebar Columns)
+   -------------------------------------------------------------------------- */
+.resume-body {
+  display: grid;
+  grid-template-columns: 63% 37%;
+  gap: 36px;
+}
+
+/* Section Headings */
+.section {
+  margin-bottom: 32px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.section-icon-box {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.section-icon-box svg {
+  width: 16px;
+  height: 16px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+/* --------------------------------------------------------------------------
+   Timeline (Work Experience)
+   -------------------------------------------------------------------------- */
+.timeline {
+  position: relative;
+  border-left: 2px solid var(--border-color);
+  margin-left: 10px;
+  padding-left: 22px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 6px;
+  left: -29px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  border: 3px solid var(--bg-surface);
+  box-shadow: 0 0 0 2px var(--border-subtle);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.job-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.company-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.job-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.job-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  border: 1px solid currentColor;
+}
+
+.badge-apple {
+  color: var(--brand-apple);
+  background: rgba(100, 116, 139, 0.1);
+}
+
+.badge-redmi {
+  color: var(--brand-redmi);
+  background: rgba(234, 88, 12, 0.1);
+}
+
+.badge-samsung {
+  color: var(--brand-samsung);
+  background: rgba(2, 132, 199, 0.1);
+}
+
+.badge-oppo {
+  color: var(--brand-oppo);
+  background: rgba(5, 150, 105, 0.1);
+}
+
+.job-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.job-bullets {
+  padding-left: 18px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.job-bullets li {
+  margin-bottom: 6px;
+  line-height: 1.55;
+}
+
+.job-bullets strong {
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Projects & Technical Work
+   -------------------------------------------------------------------------- */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-card {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  gap: 10px;
+}
+
+.project-title {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project-tag {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.project-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.project-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-pill {
+  font-size: 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar Column: Skills, Education & Info
+   -------------------------------------------------------------------------- */
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-category:last-child {
+  margin-bottom: 0;
+}
+
+.skill-group-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.skill-badge {
+  font-size: 0.825rem;
+  font-weight: 500;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 5px 11px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.skill-badge:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-border);
+  color: var(--accent-primary);
+}
+
+.badge-tech {
+  border-left: 3px solid var(--accent-primary);
+}
+
+/* Education Cards */
+.edu-card {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.edu-degree {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.edu-field {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-bottom: 6px;
+}
+
+.edu-detail {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Personal Details */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.775rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.info-val {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Resume Footer
+   -------------------------------------------------------------------------- */
+.resume-footer {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Toast Notification
+   -------------------------------------------------------------------------- */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design (Tablet & Mobile)
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .resume-card {
+    padding: 28px 20px;
+  }
+
+  .header-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .avatar-monogram {
+    width: 72px;
+    height: 72px;
+    font-size: 1.8rem;
+  }
+
+  .candidate-name {
+    font-size: 1.9rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .resume-body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .timeline {
+    margin-left: 6px;
+    padding-left: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    padding: 10px 16px;
+  }
+
+  .nav-brand {
+    display: none;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-text {
+    display: none;
+  }
+
+  .candidate-name {
+    font-size: 1.65rem;
+  }
+
+  .contact-grid {
+    flex-direction: column;
+  }
+
+  .contact-chip {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .job-header {
+    flex-direction: column;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ATS-Compliant & Pixel-Perfect Print Styles (@media print)
+   -------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
+  }
+
+  *, *::before, *::after {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide interactive / non-printable UI components */
+  .no-print, .top-nav, .toast, .btn-primary, .btn-secondary, .status-indicator {
+    display: none !important;
+  }
+
+  .resume-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-card {
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .resume-header {
+    border-bottom: 2pt solid #1e293b !important;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+  }
+
+  .header-main {
+    gap: 16pt;
+    margin-bottom: 10pt;
+  }
+
+  .avatar-monogram {
+    width: 54pt;
+    height: 54pt;
+    border: 1pt solid #000000 !important;
+    font-size: 1.6rem;
+    background: #f1f5f9 !important;
+    color: #000000 !important;
+  }
+
+  .candidate-name {
+    font-size: 20pt;
+    color: #000000 !important;
+  }
+
+  .candidate-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1e40af !important;
+  }
+
+  .candidate-summary {
+    font-size: 9.5pt;
+    color: #334155 !important;
+    line-height: 1.4;
+  }
+
+  .contact-grid {
+    gap: 6pt;
+    margin-bottom: 12pt;
+  }
+
+  .contact-chip {
+    border: 1px solid #cbd5e1 !important;
+    padding: 3pt 8pt !important;
+    font-size: 8.5pt !important;
+    color: #000000 !important;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8pt;
+    margin-bottom: 8pt;
+  }
+
+  .metric-card {
+    border: 1px solid #cbd5e1 !important;
+    padding: 6pt !important;
+  }
+
+  .metric-num {
+    font-size: 13pt;
+    color: #000000 !important;
+  }
+
+  .metric-label {
+    font-size: 7pt;
+    color: #475569 !important;
+  }
+
+  .resume-body {
+    display: grid !important;
+    grid-template-columns: 64% 36% !important;
+    gap: 16pt !important;
+  }
+
+  .section {
+    margin-bottom: 16pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .section-heading {
+    border-bottom: 1.5pt solid #334155 !important;
+    padding-bottom: 4pt;
+    margin-bottom: 10pt;
+  }
+
+  .section-icon-box {
+    display: none !important;
+  }
+
+  .section-title {
+    font-size: 12pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+  }
+
+  .timeline {
+    border-left: 1.5pt solid #cbd5e1 !important;
+    padding-left: 12pt;
+    margin-left: 4pt;
+  }
+
+  .timeline-item {
+    margin-bottom: 12pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .timeline-marker {
+    display: none !important;
+  }
+
+  .job-role {
+    font-size: 10.5pt;
+  }
+
+  .company-name {
+    font-size: 9.5pt;
+    font-weight: 700;
+  }
+
+  .job-badge {
+    border: 1px solid #94a3b8 !important;
+    font-size: 7.5pt !important;
+    padding: 1pt 5pt !important;
+  }
+
+  .job-date {
+    border: none !important;
+    font-size: 8pt !important;
+    padding: 0 !important;
+  }
+
+  .job-bullets {
+    font-size: 8.5pt;
+    padding-left: 14pt;
+  }
+
+  .job-bullets li {
+    margin-bottom: 3pt;
+  }
+
+  .project-card, .edu-card, .info-list {
+    border: 1px solid #cbd5e1 !important;
+    padding: 8pt 10pt !important;
+    margin-bottom: 8pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .skill-badge {
+    border: 1px solid #cbd5e1 !important;
+    padding: 2pt 6pt !important;
+    font-size: 8pt !important;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 7.5pt;
+    color: #475569 !important;
+  }
+
+  a[href^="tel:"]:after,
+  a[href^="mailto:"]:after,
+  a[href^="https://wa.me"]:after {
+    content: "";
+  }
+}
