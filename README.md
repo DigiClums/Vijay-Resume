@@ -10,14 +10,18 @@ A modern, responsive, and ATS-compliant interactive resume web application highl
 ## 🌟 Key Highlights & Features
 
 - **Executive Dual-Track Profile:** Highlights current leadership as **Sales Manager at Clawear (clawear.com)** along with 8+ years of tier-1 smartphone retail sales combined with modern AI Prompt Engineering and Web Development skills.
-- **ATS & Recruiter-Friendly Print Engine:** Includes a dedicated `@media print` stylesheet. Clicking **"Download PDF"** (or pressing `Cmd + P` / `Ctrl + P`) generates a clean, single/dual-page A4 document with crisp monochrome formatting, zero UI clutter, and readable contact details.
+- **Dynamic Typewriter Title:** Animated role rotation typing effect highlighting key strengths (`Sales Manager @ Clawear`, `AI Web & Frontend Developer`, `8+ Years Retail Tech Leader`, etc.).
+- **Animated Number Counters:** Smooth count-up easing animations for key impact metrics (`8+ Years`, `120%+ Target Hit`, `5 Leading Brands`).
+- **Interactive Focus Filter Tabs:** Quick filter buttons (`All Experience`, `Sales & Leadership`, `AI Web & Hardware`) that smoothly focus and dim relevant timeline and skill items.
+- **Mouse Ambient Spotlight & 3D Tilt Cards:** High-end desktop cursor spotlight and smooth 3D card tilt with brand-color glowing micro-interactions on hover (Clawear, Apple, Redmi, Samsung, OPPO).
+- **ATS & Recruiter-Friendly Print Engine:** Dedicated `@media print` stylesheet. Clicking **"Download PDF"** (or `Cmd + P`) generates a clean, single/dual-page A4 document with crisp monochrome formatting, zero UI clutter, and readable contact details without blank page gaps.
 - **Dark & Light Mode Support:** One-click toggle with system preference auto-detection and `localStorage` state persistence.
 - **Interactive Quick Actions:**
   - One-click contact copying to clipboard with toast notification.
   - Direct WhatsApp link for instant recruiter messaging.
   - Direct phone call and email triggers.
   - GitHub portfolio integration.
-- **Zero External Dependencies:** Built with pure semantic HTML5, modern CSS3 variables, and vanilla JavaScript for ultra-fast load times.
+- **Zero External Dependencies:** Pure semantic HTML5, modern CSS3 variables, and vanilla JavaScript for lightning-fast performance.
 
 ---
 

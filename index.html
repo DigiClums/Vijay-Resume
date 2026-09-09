@@ -69,7 +69,14 @@
             <div class="name-badge-row">
               <h1 class="candidate-name">Vijay Kumar Kewlani</h1>
             </div>
-            <p class="candidate-title">Sales Manager &bull; Tech Sales Specialist &bull; AI Web Developer</p>
+            <div class="title-animation-box">
+              <p class="candidate-title print-only">Sales Manager &bull; Tech Sales Specialist &bull; AI Web Developer</p>
+              <p class="candidate-title animated-title no-print" aria-label="Vijay Kumar Kewlani Role">
+                <span class="typing-prefix">Role: </span>
+                <span id="typingRole" class="typing-role">Sales Manager @ Clawear</span>
+                <span class="typing-cursor" aria-hidden="true"></span>
+              </p>
+            </div>
             <p class="candidate-summary">
               Results-driven Sales Manager and tech professional with <strong>8+ years of expertise</strong> across retail leadership and frontline sales for renowned brands including <strong>Clawear (<a href="https://clawear.com" target="_blank" rel="noopener noreferrer">clawear.com</a>), Apple, Samsung, Xiaomi/Redmi, and OPPO</strong>. Currently heading sales management, customer acquisition, and brand growth at Clawear. Combines proven sales leadership with modern capabilities in <strong>AI Web Development</strong>, prompt engineering, and hardware diagnostics to drive superior revenue outcomes.
             </p>
@@ -111,24 +118,45 @@
 
         <!-- High-Impact Key Metrics -->
         <div class="metrics-grid">
-          <div class="metric-card">
-            <span class="metric-num">8+</span>
+          <div class="metric-card interactive-card" data-tilt>
+            <span class="metric-num" data-count="8" data-suffix="+">8+</span>
             <span class="metric-label">Years Experience</span>
           </div>
-          <div class="metric-card">
-            <span class="metric-num">Manager</span>
+          <div class="metric-card interactive-card" data-tilt>
+            <span class="metric-num metric-badge-text">Manager</span>
             <span class="metric-label">Sales @ Clawear</span>
           </div>
-          <div class="metric-card">
-            <span class="metric-num">5</span>
+          <div class="metric-card interactive-card" data-tilt>
+            <span class="metric-num" data-count="5" data-suffix="">5</span>
             <span class="metric-label">Leading Brands</span>
           </div>
-          <div class="metric-card">
-            <span class="metric-num">120%+</span>
+          <div class="metric-card interactive-card" data-tilt>
+            <span class="metric-num" data-count="120" data-suffix="%+">120%+</span>
             <span class="metric-label">Avg. Sales Target Hit</span>
           </div>
         </div>
       </header>
+
+      <!-- Interactive Filter Tabs (Web only, hidden in print) -->
+      <div class="filter-wrapper no-print">
+        <div class="filter-bar" role="tablist" aria-label="Filter Experience and Skills">
+          <span class="filter-heading">
+            <svg class="filter-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            Filter View:
+          </span>
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            <span class="filter-indicator"></span> All Experience
+          </button>
+          <button class="filter-btn" data-filter="sales" role="tab" aria-selected="false">
+            <span class="filter-indicator"></span> 💼 Sales & Leadership
+          </button>
+          <button class="filter-btn" data-filter="tech" role="tab" aria-selected="false">
+            <span class="filter-indicator"></span> ⚡ AI Web & Hardware
+          </button>
+        </div>
+      </div>
 
       <!-- Two-Column Layout for ATS & Modern Viewing -->
       <div class="resume-body">
@@ -151,7 +179,7 @@
             <div class="timeline">
 
               <!-- Clawear Job (Current) -->
-              <article class="timeline-item current-job">
+              <article class="timeline-item current-job interactive-card" data-category="sales">
                 <div class="timeline-marker marker-current"></div>
                 <div class="timeline-content">
                   <div class="job-header">
@@ -176,7 +204,7 @@
               </article>
 
               <!-- Apple Job -->
-              <article class="timeline-item">
+              <article class="timeline-item interactive-card" data-category="sales tech">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                   <div class="job-header">
@@ -199,7 +227,7 @@
               </article>
 
               <!-- Redmi Job -->
-              <article class="timeline-item">
+              <article class="timeline-item interactive-card" data-category="sales">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                   <div class="job-header">
@@ -222,7 +250,7 @@
               </article>
 
               <!-- Samsung Job -->
-              <article class="timeline-item">
+              <article class="timeline-item interactive-card" data-category="sales tech">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                   <div class="job-header">
@@ -245,7 +273,7 @@
               </article>
 
               <!-- OPPO Job -->
-              <article class="timeline-item">
+              <article class="timeline-item interactive-card" data-category="sales">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                   <div class="job-header">
@@ -270,7 +298,7 @@
           </section>
 
           <!-- Featured Projects / Technical Initiatives -->
-          <section class="section">
+          <section class="section" data-category="tech">
             <div class="section-heading">
               <div class="section-icon-box">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -282,7 +310,7 @@
             </div>
 
             <div class="projects-grid">
-              <div class="project-card">
+              <div class="project-card interactive-card" data-tilt>
                 <div class="project-header">
                   <h3 class="project-title">AI Web Applications & Prompt Engineering</h3>
                   <span class="project-tag">AI & Web</span>
@@ -298,7 +326,7 @@
                 </div>
               </div>
 
-              <div class="project-card">
+              <div class="project-card interactive-card" data-tilt>
                 <div class="project-header">
                   <h3 class="project-title">Interactive Digital Resume & Portfolio</h3>
                   <a href="https://github.com/DigiClums/Vijay-Resume" target="_blank" rel="noopener noreferrer" class="project-link" title="View Source on GitHub">
@@ -334,7 +362,7 @@
               <h2 class="section-title">Skills & Competencies</h2>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category" data-category="sales">
               <h4 class="skill-group-title">Sales Leadership & Retail Mastery</h4>
               <div class="skills-cloud">
                 <span class="skill-badge">Sales Operations Management</span>
@@ -348,7 +376,7 @@
               </div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category" data-category="tech">
               <h4 class="skill-group-title">AI & Web Development</h4>
               <div class="skills-cloud">
                 <span class="skill-badge badge-tech">AI Web Development</span>
@@ -361,7 +389,7 @@
               </div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category" data-category="tech">
               <h4 class="skill-group-title">Hardware & Diagnostics</h4>
               <div class="skills-cloud">
                 <span class="skill-badge">Smartphone Architecture</span>
@@ -371,7 +399,7 @@
               </div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category" data-category="sales tech">
               <h4 class="skill-group-title">Tools & Platforms</h4>
               <div class="skills-cloud">
                 <span class="skill-badge">MS Office (Excel, Word)</span>
