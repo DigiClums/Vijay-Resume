@@ -35,14 +35,31 @@
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
           </svg>
-          <span class="btn-text">Copy Contact</span>
+          <span class="btn-text">Copy</span>
         </button>
-        <a href="https://wa.me/916378191156?text=Hi%20Vijay,%20I%20saw%20your%20resume" target="_blank" rel="noopener noreferrer" class="btn-secondary" title="Message on WhatsApp">
-          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.43c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/>
+        <button id="vCardBtn" class="btn-secondary" title="Save Contact to Phone (vCard)" aria-label="Save Contact vCard">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
           </svg>
-          <span class="btn-text">WhatsApp</span>
-        </a>
+          <span class="btn-text">Save Contact</span>
+        </button>
+        <button id="qrBtn" class="btn-secondary" title="View QR Code" aria-label="View QR Code">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span class="btn-text">QR Code</span>
+        </button>
+        <button id="quickMsgBtn" class="btn-highlight" title="Send Quick Message / Hire Me" aria-label="Quick Message">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          <span>⚡ Quick Message</span>
+        </button>
         <button id="printBtn" class="btn-primary" onclick="window.print()" title="Download PDF or Print" aria-label="Download PDF">
           <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M6 9V2h12v7"></path>
@@ -477,6 +494,88 @@
       </footer>
 
     </main>
+  </div>
+
+  <!-- QR Code Modal (Hidden during Print) -->
+  <div id="qrModal" class="modal-backdrop no-print" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="closeQrModal" aria-label="Close QR Code">&times;</button>
+      <div class="modal-header">
+        <h3 id="qrTitle" class="modal-title">Digital Profile &amp; Contact QR</h3>
+        <p class="modal-subtitle">Scan to view live portfolio or save direct contact on mobile</p>
+      </div>
+      <div class="qr-container">
+        <div id="qrCodeWrapper" class="qr-code-box">
+          <img src="qr-code.svg" alt="Vijay Kumar Kewlani Digital Resume QR Code" width="180" height="180" loading="lazy">
+        </div>
+      </div>
+      <div class="qr-details">
+        <p class="qr-url-text">https://digiclums.github.io/Vijay-Resume/</p>
+      </div>
+      <div class="modal-actions">
+        <button id="modalVCardBtn" class="btn-primary" style="width: 100%;">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
+          </svg>
+          <span>Download Contact (.vcf)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Message / Hire Me Modal (Hidden during Print) -->
+  <div id="quickMsgModal" class="modal-backdrop no-print" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="msgTitle">
+    <div class="modal-card modal-card-wide">
+      <button class="modal-close" id="closeMsgModal" aria-label="Close Message Dialog">&times;</button>
+      <div class="modal-header">
+        <h3 id="msgTitle" class="modal-title">Get in Touch with Vijay</h3>
+        <p class="modal-subtitle">Direct message via WhatsApp or Email for interview or business inquiry</p>
+      </div>
+      
+      <!-- Quick Topic Chips -->
+      <div class="topic-chips" role="group" aria-label="Select Inquiry Topic">
+        <button type="button" class="topic-chip active" data-topic="interview">💼 Schedule Interview</button>
+        <button type="button" class="topic-chip" data-topic="sales">👔 Sales Leadership</button>
+        <button type="button" class="topic-chip" data-topic="tech">⚡ AI &amp; Web Project</button>
+        <button type="button" class="topic-chip" data-topic="general">💬 General Connect</button>
+      </div>
+
+      <form id="quickMsgForm" class="modal-form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="senderName" class="form-label">Your Name</label>
+            <input type="text" id="senderName" class="form-input" placeholder="e.g. Rahul Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="senderCompany" class="form-label">Company / Organization</label>
+            <input type="text" id="senderCompany" class="form-input" placeholder="e.g. Retail Corp / Tech Startup">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="customMessage" class="form-label">Message</label>
+          <textarea id="customMessage" class="form-textarea" rows="3" placeholder="Type your message or inquiry..."></textarea>
+        </div>
+
+        <div class="form-actions-grid">
+          <button type="button" id="sendWhatsAppBtn" class="btn-whatsapp">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.43c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/>
+            </svg>
+            <span>Send on WhatsApp</span>
+          </button>
+          <button type="button" id="sendEmailBtn" class="btn-email">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Send via Email</span>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <!-- Toast Notification for Copy -->
