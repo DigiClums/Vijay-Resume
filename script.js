@@ -369,10 +369,10 @@ function initModals() {
   const msgTextarea = document.getElementById('customMessage');
 
   const messageTemplates = {
-    interview: 'Hi Vijay, we reviewed your resume and would like to invite you for an interview regarding an exciting Sales Management / Tech role.',
+    interview: 'Hi Vijay, I came across your resume and would like to discuss an opportunity.',
     sales: 'Hi Vijay, we are looking for a high-performing Sales Manager with your track record at Clawear, Apple, and Samsung.',
-    tech: 'Hi Vijay, we are impressed by your AI Web Development and tech background and would like to discuss a project collaboration.',
-    general: 'Hi Vijay, I came across your digital resume and would like to connect with you!'
+    tech: 'Hi Vijay, we reviewed your Product, FinTech & Web3 knowledge and would like to discuss an opportunity.',
+    general: 'Hi Vijay, I came across your resume and would like to discuss an opportunity.'
   };
 
   function setDefaultMessage(topic) {
@@ -394,13 +394,18 @@ function initModals() {
   const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
   if (sendWhatsAppBtn) {
     sendWhatsAppBtn.addEventListener('click', () => {
-      const senderName = document.getElementById('senderName')?.value.trim() || 'Recruiter/Client';
-      const senderCompany = document.getElementById('senderCompany')?.value.trim() || '';
-      const customMsg = msgTextarea?.value.trim() || '';
+      const senderName = document.getElementById('senderName')?.value.trim();
+      const senderCompany = document.getElementById('senderCompany')?.value.trim();
+      const customMsg = msgTextarea?.value.trim() || 'Hi Vijay, I came across your resume and would like to discuss an opportunity.';
 
-      let text = `Hello Vijay,\n\nI am ${senderName}`;
-      if (senderCompany) text += ` from ${senderCompany}`;
-      text += `.\n\n${customMsg}\n\n(Sent via Vijay-Resume Digital Profile)`;
+      let text = '';
+      if (senderName) {
+        text = `Hello Vijay,\n\nI am ${senderName}`;
+        if (senderCompany) text += ` from ${senderCompany}`;
+        text += `.\n\n${customMsg}\n\n(Sent via Vijay-Resume Digital Profile)`;
+      } else {
+        text = customMsg;
+      }
 
       const waUrl = `https://wa.me/916378191156?text=${encodeURIComponent(text)}`;
       window.open(waUrl, '_blank');

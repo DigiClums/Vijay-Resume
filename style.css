@@ -838,12 +838,13 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: var(--transition);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
 }
 
 .knowledge-card:hover {
+  transform: translateY(-2px);
   border-color: var(--accent-border);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.15);
   background: var(--bg-card-hover);
 }
 
