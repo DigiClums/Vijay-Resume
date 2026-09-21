@@ -31,9 +31,10 @@ function initTypewriter() {
 
   const roles = [
     'Sales Manager @ Clawear',
-    'AI Web & Frontend Developer',
+    'Tech Sales Specialist',
+    'FinTech & Web3 Enthusiast',
     '8+ Years Retail Tech Sales Leader',
-    'Prompt Engineering & LLM Integrations',
+    'AI Tools & Prompt Engineering',
     'Smartphone Diagnostics & Hardware Specialist'
   ];
 

@@ -937,6 +937,10 @@ a:hover {
   border-left: 3px solid var(--accent-primary);
 }
 
+.badge-product {
+  border-left: 3px solid #059669;
+}
+
 /* Education Cards */
 .edu-card {
   background: var(--bg-surface-subtle);
