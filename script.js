@@ -277,13 +277,14 @@ function downloadVCard() {
     'N:Kewlani;Vijay;Kumar;;',
     'FN:Vijay Kumar Kewlani',
     'ORG:Clawear (clawear.com)',
-    'TITLE:Sales Manager & AI Web Developer',
+    'TITLE:Sales Manager & Tech Sales Specialist • FinTech & Web3',
     'TEL;TYPE=CELL,VOICE;VALUE=uri:tel:+916378191156',
     'EMAIL;TYPE=INTERNET,PREF:vijaykewlani231994@gmail.com',
-    'ADR;TYPE=HOME:;;Niwaru;Jaipur;Rajasthan;302012;India',
+    'ADR;TYPE=HOME:;;;Jaipur;Rajasthan;;India',
     'URL:https://digiclums.github.io/Vijay-Resume/',
+    'URL;TYPE=LinkedIn:https://www.linkedin.com/in/vijaykewlani/',
     'URL;TYPE=GitHub:https://github.com/DigiClums',
-    'NOTE:Sales Manager with 8+ years retail & tech sales mastery across Clawear, Apple, Samsung, Xiaomi, OPPO and AI Web Development.',
+    'NOTE:Sales Manager with 8+ years retail & tech sales expertise across Clawear, Apple, Samsung, Xiaomi, OPPO, FinTech, Web3, and AI workflows.',
     'END:VCARD'
   ].join('\r\n');
 
