@@ -822,6 +822,75 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
+   Computer & Product Knowledge Grid
+   -------------------------------------------------------------------------- */
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.knowledge-card {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.knowledge-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-sm);
+  background: var(--bg-card-hover);
+}
+
+.knowledge-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.knowledge-icon-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.knowledge-icon-badge svg {
+  width: 15px;
+  height: 15px;
+}
+
+.knowledge-title {
+  font-size: 0.885rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.knowledge-desc {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.48;
+  margin: 0;
+}
+
+.knowledge-desc strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
    Sidebar Column: Skills, Education & Info
    -------------------------------------------------------------------------- */
 .skill-category {
@@ -1317,6 +1386,10 @@ a:hover {
   .job-header {
     flex-direction: column;
   }
+
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1563,7 +1636,7 @@ a:hover {
     margin-bottom: 2pt !important;
   }
 
-  .project-card, .edu-card, .info-list {
+  .project-card, .edu-card, .info-list, .knowledge-card {
     border: 1px solid #cbd5e1 !important;
     padding: 6pt 8pt !important;
     margin-bottom: 6pt !important;
