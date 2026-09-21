@@ -826,7 +826,7 @@ a:hover {
    -------------------------------------------------------------------------- */
 .knowledge-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 
@@ -1353,6 +1353,10 @@ a:hover {
   .timeline {
     margin-left: 6px;
     padding-left: 18px;
+  }
+
+  .knowledge-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
