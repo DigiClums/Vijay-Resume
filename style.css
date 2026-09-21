@@ -294,6 +294,22 @@ a:hover {
   box-shadow: 0 12px 28px rgba(5, 150, 105, 0.4);
 }
 
+.avatar-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.28);
+  border: 2px solid var(--accent-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.avatar-img:hover {
+  transform: rotate(2deg) scale(1.04);
+  box-shadow: 0 12px 28px rgba(5, 150, 105, 0.4);
+}
+
 .header-details {
   flex: 1;
 }
